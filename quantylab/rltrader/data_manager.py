@@ -177,13 +177,14 @@ def load_data(code, date_from, date_to, ver='v2'):
     if ver in ['v3', 'v4']:
         return load_data_v3_v4(code, date_from, date_to, ver)
 
-    header = None if ver == 'v1' else 0
+    #header = None if ver == 'v1' else 0
+    header = 0
     df = pd.read_csv(
         os.path.join(settings.BASE_DIR, 'data', ver, f'{code}.csv'),
         thousands=',', header=header, converters={'date': lambda x: str(x)})
 
-    if ver == 'v1':
-        df.columns = ['date', 'open', 'high', 'low', 'close', 'volume']
+   #if ver == 'v1':
+   #     df.columns = ['date', 'open', 'high', 'low', 'close', 'volume']
 
     # 날짜 오름차순 정렬
     df = df.sort_values(by='date').reset_index(drop=True)

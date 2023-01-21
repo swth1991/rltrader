@@ -1,0 +1,2 @@
+model_checkpoint_path: "SAMSUNG_dqn_dnn_value.mdl"
+all_model_checkpoint_paths: "SAMSUNG_dqn_dnn_value.mdl"
